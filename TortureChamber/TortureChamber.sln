@@ -15,17 +15,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Shared", "05 Shared", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Core", "Web.Core\Web.Core.csproj", "{A214DDB7-242D-4D3B-A789-74CE0D73287C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Database", "Data.Database\Data.Database.csproj", "{3C529086-94D5-45E0-8B1B-90710D699932}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Database", "Data.Database\Data.Database.csproj", "{3C529086-94D5-45E0-8B1B-90710D699932}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Entities", "Data.Entities\Data.Entities.csproj", "{BB0C048B-142F-4C77-9F1B-E63D1C14F4B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Entities", "Data.Entities\Data.Entities.csproj", "{BB0C048B-142F-4C77-9F1B-E63D1C14F4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Shared", "Logic.Shared\Logic.Shared.csproj", "{9EEC7D5E-1146-4003-ABE7-DD8F15C9170A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic.Shared", "Logic.Shared\Logic.Shared.csproj", "{9EEC7D5E-1146-4003-ABE7-DD8F15C9170A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Models", "Data.Models\Data.Models.csproj", "{F5B9DB6F-1D51-45E1-985A-4CC5D69668CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Models", "Data.Models\Data.Models.csproj", "{F5B9DB6F-1D51-45E1-985A-4CC5D69668CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Shared", "Data.Shared\Data.Shared.csproj", "{C21F3176-8CF0-4CE5-A82C-3F9FA9C48C67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Shared", "Data.Shared\Data.Shared.csproj", "{C21F3176-8CF0-4CE5-A82C-3F9FA9C48C67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Measurement", "Logic.Measurement\Logic.Measurement.csproj", "{056653DA-44CD-463A-BA40-A0E18C575F22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic.Measurement", "Logic.Measurement\Logic.Measurement.csproj", "{056653DA-44CD-463A-BA40-A0E18C575F22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Weather", "Logic.Weather\Logic.Weather.csproj", "{011E16B0-663E-42D7-81CA-304E63C4561B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{056653DA-44CD-463A-BA40-A0E18C575F22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{056653DA-44CD-463A-BA40-A0E18C575F22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{056653DA-44CD-463A-BA40-A0E18C575F22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011E16B0-663E-42D7-81CA-304E63C4561B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011E16B0-663E-42D7-81CA-304E63C4561B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011E16B0-663E-42D7-81CA-304E63C4561B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011E16B0-663E-42D7-81CA-304E63C4561B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{F5B9DB6F-1D51-45E1-985A-4CC5D69668CB} = {DC3F6156-3E31-43E2-B792-993CB81FA2A4}
 		{C21F3176-8CF0-4CE5-A82C-3F9FA9C48C67} = {DC3F6156-3E31-43E2-B792-993CB81FA2A4}
 		{056653DA-44CD-463A-BA40-A0E18C575F22} = {4FD0FBF9-2DDB-4F2A-AB17-6FCEACC14E16}
+		{011E16B0-663E-42D7-81CA-304E63C4561B} = {4FD0FBF9-2DDB-4F2A-AB17-6FCEACC14E16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DDB9C9B7-B8EF-4F21-B299-365C616129C8}

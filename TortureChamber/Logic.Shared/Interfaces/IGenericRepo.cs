@@ -8,7 +8,7 @@ namespace Logic.Shared.Interfaces
 
         Task<TEntity?> GetById(Guid id);
 
-        Task Insert(TEntity entity);
+        Task<Guid> Insert(TEntity entity);
 
         Task Update(Guid id, TEntity entity);
 

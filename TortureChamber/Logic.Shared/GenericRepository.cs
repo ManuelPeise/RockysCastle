@@ -26,10 +26,12 @@ namespace Logic.Shared
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task Insert(TEntity entity)
+        public async Task<Guid> Insert(TEntity entity)
         {
-            await _context.Set<TEntity>().AddAsync(entity);
+            var insertedEntity =  await _context.Set<TEntity>().AddAsync(entity);
             await _context.SaveChangesAsync();
+
+            return insertedEntity.Entity.Id;
         }
 
         public async Task Update(Guid id, TEntity entity)
