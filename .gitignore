@@ -15,6 +15,11 @@ x64/
 [Bb]in/
 [Oo]bj/
 
+
+# other
+
+*bootstrap
+**bootstrap
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
@@ -121,3 +126,4 @@ App_Data/*.ldf
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+/TortureChamber/Web.Core/appsettings.Development.json
