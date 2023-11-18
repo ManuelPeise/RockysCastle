@@ -2,6 +2,7 @@
 using Data.Entities.Interfaces;
 using Logic.Shared.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace Logic.Shared
 {
@@ -17,6 +18,19 @@ namespace Logic.Shared
         public async Task<List<TEntity>> GetAll()
         {
             return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
+        }
+
+        public async Task<TEntity?> Get(Func<TEntity, bool> predicate)
+        {
+            var all = await GetAll();
+
+            return all.Where(predicate).FirstOrDefault();
+        }
+        public async Task<List<TEntity>> GetCollection(Func<TEntity, bool> predicate)
+        {
+            var all = await GetAll();
+
+            return all.Where(predicate).ToList();
         }
 
         public async Task<TEntity?> GetById(Guid id)

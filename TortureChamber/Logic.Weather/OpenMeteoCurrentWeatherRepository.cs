@@ -14,7 +14,7 @@ namespace Logic.Weather
 
         public OpenMeteoCurrentWeatherRepository(AppDataContext context, IWeatherHttpClient weatherHttpClient) : base(context)
         {
-         
+
             _weatherHttpClient = weatherHttpClient;
         }
 
@@ -30,6 +30,19 @@ namespace Logic.Weather
             var entity = response.Current.ToEntity(weatherLocation.Id);
 
             await Insert(entity);
+        }
+
+        public async Task<CurrentWeather?> GetCurrentWeather(WeatherLocation weatherLocation, DateTime date)
+        {
+            var entities = await GetAll();
+
+            return entities
+                .Where(x =>
+                    x.Location.Id == weatherLocation.Id
+                    && x.TimeStamp.Date == date.Date)
+                .FirstOrDefault()?.ToModel();
+
+
         }
     }
 }

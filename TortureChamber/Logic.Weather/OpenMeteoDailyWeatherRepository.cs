@@ -8,7 +8,7 @@ using Logic.Weather.Models;
 
 namespace Logic.Weather
 {
-    public class OpenMeteoDailyWeatherRepository: GenericRepository<DailyWeatherData>, IOpenMeteoDailyWeatherRepository
+    public class OpenMeteoDailyWeatherRepository : GenericRepository<DailyWeatherData>, IOpenMeteoDailyWeatherRepository
     {
         private readonly IWeatherHttpClient _weatherHttpClient;
 
@@ -33,6 +33,42 @@ namespace Logic.Weather
             await AddAsync(entityCollection, importDate);
         }
 
+        public async Task<DailyWeather?> GetDailyWeather(WeatherLocation weatherLocation, DateTime date)
+        {
+            var entity = await Get(x => x.TimeStamp.Date == date.Date
+                && x.Location.Id == weatherLocation.Id);
+
+            if (entity == null)
+            {
+                return null;
+            }
+
+            return entity.ToModel();
+        }
+
+        public async Task<List<DailyWeather>?> GetAllDailyWeather(WeatherLocation weatherLocation, DateTime? from, DateTime? to)
+        {
+            if (from == null || to == null)
+            {
+                return (from entity in await GetCollection(x => x.Location.Id == weatherLocation.Id)
+                        select entity.ToModel()).ToList();
+            }
+
+            var entities = await GetCollection(x => x.LocationId == weatherLocation.Id
+                && x.TimeStamp.Date >= from.Value.Date && x.TimeStamp.Date <= to.Value.Date);
+
+            if (entities == null)
+            {
+                return new List<DailyWeather>();
+            }
+
+            return (from entity in entities
+                    select entity.ToModel()).ToList();
+
+        }
+
+
+        #region private
         private async Task AddHistoricalAsync(List<DailyWeatherData> entities, DateTime importDate)
         {
             // get historical entities
@@ -49,5 +85,7 @@ namespace Logic.Weather
 
             await InsertRange(entitiesToInsert);
         }
+
+        #endregion
     }
 }

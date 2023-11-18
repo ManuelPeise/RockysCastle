@@ -8,6 +8,10 @@ namespace Logic.Shared.Interfaces
 
         Task<TEntity?> GetById(Guid id);
 
+        Task<TEntity?> Get(Func<TEntity, bool> predicate);
+
+        Task<List<TEntity>> GetCollection(Func<TEntity, bool> predicate);
+
         Task<Guid> Insert(TEntity entity);
 
         Task InsertRange(List<TEntity> entityCollection);

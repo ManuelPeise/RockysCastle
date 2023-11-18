@@ -69,5 +69,67 @@ namespace Logic.Weather.Extensions
 
             return dailyWeatherDataCollection;
         }
+
+        internal static CurrentWeather ToModel(this CurrentWeatherData model)
+        {
+            return new CurrentWeather
+            {
+                Id = model.Id,
+                Clouds = model.Clouds,
+                Humidity = model.Humidity,
+                Pressure = model.Pressure,
+                Rain = model.Rain,
+                Showers = model.Showers,
+                SnowFall = model.SnowFall,
+                Temperature = model.Temperature,
+                TempFeelsLike = model.TempFeelsLike,
+                TimeStamp = model.TimeStamp,
+                WeatherCode = model.WeatherCode,
+                WindDirection = model.WindDirection,
+                WindGustSpeed = model.WindGustSpeed,
+                WindSpeed = model.WindSpeed,
+                Location = model.Location.ToModel()
+            };
+        }
+
+        internal static DailyWeather ToModel(this DailyWeatherData model)
+        {
+            return new DailyWeather
+            {
+                Id = model.Id,
+                TimeStamp = model.TimeStamp,
+                ImportDate = model.ImportDate,
+                LastUpdate = model.LastUpdate,
+                TempFeelsMax = model.TempFeelsMax,
+                TempFeelsMin = model.TempFeelsMin,
+                MaxTemp = model.MaxTemp,
+                MinTemp = model.MinTemp,
+                Sunrise = model.Sunrise,
+                Sunset = model.Sunset,
+                ShowersSum = model.ShowersSum,
+                RainSum = model.RainSum,
+                SnowSum = model.SnowSum,
+                SunShineDuration = model.SunShineDuration,
+                WeatherCode = model.WeatherCode,
+                WindDirection = model.WindDirection,
+                WindGusts = model.WindGusts,
+                WindSpeed = model.WindSpeed,
+                Location = model.Location.ToModel()
+            };
+        }
+
+        internal static Location ToModel(this WeatherLocation model)
+        {
+            return new Location
+            {
+                Id = model.Id,
+                Name = model.Name,
+                Country = model.Country,
+                CountryCode = model.CountryCode,
+                Latitude = model.Latitude,
+                Longitude = model.Longitude,
+                TimeZone = model.TimeZone,
+            };
+        }
     }
 }
