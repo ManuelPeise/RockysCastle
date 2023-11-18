@@ -28,16 +28,28 @@ namespace Logic.Shared
 
         public async Task<Guid> Insert(TEntity entity)
         {
-            var insertedEntity =  await _context.Set<TEntity>().AddAsync(entity);
+            var insertedEntity = await _context.Set<TEntity>().AddAsync(entity);
             await _context.SaveChangesAsync();
 
             return insertedEntity.Entity.Id;
+        }
+
+        public async Task InsertRange(List<TEntity> entityCollection)
+        {
+            await _context.Set<TEntity>().AddRangeAsync(entityCollection);
+
+            await _context.SaveChangesAsync();
         }
 
         public async Task Update(Guid id, TEntity entity)
         {
             _context.Set<TEntity>().Update(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateRange(List<TEntity> entities)
+        {
+            _context.Set<TEntity>().UpdateRange(entities);
         }
 
         public async Task Delete(Guid id)

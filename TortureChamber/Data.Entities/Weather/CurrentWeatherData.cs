@@ -22,7 +22,7 @@ namespace Data.Entities.Weather
         public double WindDirection { get; set; }
         public double WindGustSpeed { get; set; }
         [ForeignKey("Id")]
-        public int LocationId { get; set; }
+        public Guid LocationId { get; set; }
         public WeatherLocation Location { get; set; } = new WeatherLocation();
     }
 }

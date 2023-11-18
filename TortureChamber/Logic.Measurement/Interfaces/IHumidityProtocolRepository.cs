@@ -1,6 +1,7 @@
 ﻿using Data.Entities.Measurement;
+using Logic.Shared.Interfaces;
 
-namespace Logic.Shared.Interfaces
+namespace Logic.Measurement.Interfaces
 {
     public interface IHumidityProtocolRepository: IGenericRepository<HumidityLogEntry>
     {

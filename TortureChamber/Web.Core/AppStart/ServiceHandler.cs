@@ -1,6 +1,10 @@
 ﻿using Data.Database;
+using Logic.Measurement;
+using Logic.Measurement.Interfaces;
 using Logic.Shared;
 using Logic.Shared.Interfaces;
+using Logic.Weather;
+using Logic.Weather.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Web.Core.AppStart
@@ -15,6 +19,11 @@ namespace Web.Core.AppStart
             });
 
             builder.Services.AddScoped<IHumidityProtocolRepository, HumidityProtocolRepository>();
+
+            // weather services
+            builder.Services.AddScoped<IOpenMeteoCurrentWeatherRepository, OpenMeteoCurrentWeatherRepository>();
+            builder.Services.AddScoped<IOpenMeteoDailyWeatherRepository, OpenMeteoDailyWeatherRepository>();
+            builder.Services.AddScoped<IWeatherLocationRepository, WeatherLocationRepository>();
 
             // Add services to the container.
             builder.Services.AddRazorPages();

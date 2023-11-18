@@ -22,4 +22,9 @@
     <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data.Database\Data.Database.csproj" />
+    <ProjectReference Include="..\Logic.Shared\Logic.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

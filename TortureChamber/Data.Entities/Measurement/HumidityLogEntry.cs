@@ -22,5 +22,9 @@ namespace Data.Entities.Measurement
         public Guid WeatherDataId { get; set; }
         public Room WeatherData { get; set; } = new Room();
 
+        [ForeignKey("Id")]
+        public Guid MeasurementAdressId { get; set; }
+        public MeasurementAdress MeasurementAdress { get; set; } = new MeasurementAdress();
+
     }
 }

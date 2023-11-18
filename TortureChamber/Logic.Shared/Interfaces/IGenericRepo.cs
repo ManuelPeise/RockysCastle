@@ -10,7 +10,11 @@ namespace Logic.Shared.Interfaces
 
         Task<Guid> Insert(TEntity entity);
 
+        Task InsertRange(List<TEntity> entityCollection);
+
         Task Update(Guid id, TEntity entity);
+
+        Task UpdateRange(List<TEntity> entities);
 
         Task Delete(Guid id);
     }
