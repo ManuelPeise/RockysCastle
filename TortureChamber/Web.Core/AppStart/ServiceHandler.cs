@@ -19,6 +19,7 @@ namespace Web.Core.AppStart
             });
 
             builder.Services.AddScoped<IHumidityProtocolRepository, HumidityProtocolRepository>();
+            builder.Services.AddScoped<IMeasurementAdressRepository, MeasurementAdressRepository>();
 
             // weather services
             builder.Services.AddScoped<IOpenMeteoCurrentWeatherRepository, OpenMeteoCurrentWeatherRepository>();

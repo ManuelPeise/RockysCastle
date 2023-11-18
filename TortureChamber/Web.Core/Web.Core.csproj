@@ -24,7 +24,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data.Database\Data.Database.csproj" />
+    <ProjectReference Include="..\Logic.Measurement\Logic.Measurement.csproj" />
     <ProjectReference Include="..\Logic.Shared\Logic.Shared.csproj" />
+    <ProjectReference Include="..\Logic.Weather\Logic.Weather.csproj" />
   </ItemGroup>
 
 </Project>
